@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: Triple OG
+  Date: 2/23/2019
+  Time: 12:30 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="templates/base-layout.xhtml">
+    <ui:define name="main-content">
+        <main class="mt-3">
+            <hr class="bg-exodia hr-2"/>
+            <h1 class="text-center text-exodia">Login</h1>
+            <hr class="bg-exodia w-25 hr-2"/>
+            <h:form class="mx-auto w-25" method="post" action="/login">
+                <div class="form-group">
+                    <h:outputLabel for="username" value="Username" class="text-exodia"/>
+                    <h:inputText value="#{login.userLoginBindingModel.username}" type="text" class="form-control" id="username" placeholder="Username..." name="username"/>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel for="password" class="text-exodia" value="Password"/>
+                    <h:inputSecret value="#{login.userLoginBindingModel.password}" type="password" class="form-control" id="password" placeholder="Password..." name="password"/>
+                </div>
+                <hr class="bg-exodia hr-2"/>
+                <div class="button-holder d-flex justify-content-center">
+                    <h:commandButton action="#{login.login}" type="submit" class="btn bg-exodia text-white" value="Login"/>
+                </div>
+            </h:form>
+            <hr class="bg-exodia hr-2 mt-5"/>
+        </main>
+    </ui:define>
+</ui:composition>
+
+</html>
